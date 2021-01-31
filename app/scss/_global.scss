@@ -6,10 +6,13 @@ html {
 *::after {
     box-sizing: inherit;
 }
-html,
-body {
+html {
     height: 100%;
-    background-color: #000;
+}
+body {
+    font-family: 'RobotoCondensed-Regular';
+    color: #000;
+    height: 100%;
 }
 a {
     display: inline-block;
@@ -23,6 +26,142 @@ ul, li {
 .container {
     width: 1200px;
     margin: 0 auto;
+    height: 100%;
     padding: 0 15px;
+    // border: 1px solid grey;
 }
-
+.logo {
+    width: 60px;
+    height: 63px;
+}
+.menu {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: .5s;
+        &:hover {
+            border-bottom: 2px solid $main; 
+        }
+    }
+    &__item+.menu__item {
+        margin-left: 45px;
+    }
+    &__link {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+    }
+}
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway-SemiBold';
+    font-size: 48px;
+    line-height: 56px;
+    color: #01353E;
+    position: relative;
+    &:after {
+        content: '/';
+        position: absolute;
+        color: $main;
+        top: 15px;
+        font-size: 72px;
+    }
+}
+.attainment {
+    display: flex;
+    justify-content: space-around;
+    &__item + .attainment__item {
+        margin-left: 75px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 30px;
+        color: $dark;
+        max-width: 220px;
+        height: 55px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        &:before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        &--1:before {
+            background-image: url(../images/get1.png);
+        }
+        &--2:before {
+            background-image: url(../images/get2.png);
+        }
+        &--3:before {
+            background-image: url(../images/get3.png);
+        }
+    }
+    &__item {
+        width: 33.3%;
+    }
+    &__text {
+        font-family: 'RobotoCondensed-Light';
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark;
+    }
+}
+.progress {
+    &__img {
+        height: 15px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+        &:after {
+            font-size: 24px;
+            line-height: 30px;
+            color: $dark;
+            margin-left: auto;
+            margin-right: -50px;
+        }
+        &--short {
+            width: 200px;
+            background-image: url(../images/wawe1.png);
+            &:after {
+                content: '85%';
+            }
+        }
+        &--medium {
+            width: 250px;
+            background-image: url(../images/wawe2.png);
+            &:after {
+                content: '95%';
+            }
+        }
+        &--long {
+            width: 300px;
+            background-image: url(../images/wawe3.png);
+            &:after {
+                content: '99%';
+            }
+        }
+    }
+}
+.text {
+    font-family: 'RobotoCondensed-Light';
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark;
+    margin-bottom: 30px;
+}
