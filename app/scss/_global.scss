@@ -27,12 +27,15 @@ ul, li {
     width: 1200px;
     margin: 0 auto;
     height: 100%;
-    padding: 0 15px;
+    padding: 0;
     // border: 1px solid grey;
 }
 .logo {
     width: 60px;
     height: 63px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 .menu {
     &__list {
@@ -112,12 +115,6 @@ ul, li {
     &__item {
         width: 33.3%;
     }
-    &__text {
-        font-family: 'RobotoCondensed-Light';
-        font-size: 14px;
-        line-height: 18px;
-        color: $dark;
-    }
 }
 .progress {
     &__img {
@@ -157,11 +154,74 @@ ul, li {
             }
         }
     }
+    &__text {
+        margin-bottom: 30px;
+    }
 }
 .text {
     font-family: 'RobotoCondensed-Light';
     font-size: 14px;
     line-height: 18px;
     color: $dark;
-    margin-bottom: 30px;
+}
+.package {
+    background-color: #fff;
+    padding: 45px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid transparent;
+    transition: .3s;
+    &:hover {
+        border: 1px solid $main;
+    }
+    &__title {
+        text-align: center;
+        font-size: 36px;
+        line-height: 40px;
+        color: #01353E;
+        margin-bottom: 58px;
+    }
+    &__list {
+        margin-bottom: 60px;
+    }
+    &__item {
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark;
+        margin-bottom: 20px;
+    }
+    &__price {
+        margin-top: auto;
+        font-size: 36px;
+        line-height: 40px;
+        color: #01353E;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:after {
+            content: '$';
+            font-size: 18px;
+            line-height: 22px;
+            color: #01353E;
+            margin-left: 5px;
+        }
+    }
+}
+.social {
+    display: flex;
+    justify-content: center;
+    &__item {
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 24px;
+        color: #242121;
+        transition: .2s;
+        &:hover {
+            color: $main;
+        }
+    }
+    &__item+.social__item {
+        margin-left: 10px;
+    }
 }
