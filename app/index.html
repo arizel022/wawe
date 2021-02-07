@@ -17,6 +17,11 @@
                 <div class="header__inner">
                     <a class="logo header__logo" href="#" style="background-image: url(images/logo.png);"></a>
                     <nav class="header__menu menu">
+                        <div class="menu__burger">
+                            <span class="menu__line"></span>
+                            <span class="menu__line"></span>
+                            <span class="menu__line"></span>
+                        </div>
                         <ul class="menu__list">
                             <li class="menu__item">
                                 <a href="#" class="menu__link">О нас</a>
@@ -142,7 +147,6 @@
                                 программы. Тренировочный процесс начинается с определения вашего уровня катания
                             </div>
                         </div>
-
                     </div>
                     <div class="get__bottom">
                         <div class="get__bottom-item">
@@ -177,35 +181,33 @@
             </div>
         </section>
         <section class="motivation">
-            <div class="container">
-                <div class="motivation__inner">
-                    <div class="motivation__info">
-                        <div class="motivation__title title">
-                            покоряй вершины
-                        </div>
-                        <div class="motivation__text text">
-                            Преподаватели нашей школы серфинга в числе лучших серферов на Канарских островах. Среди них
-                            - чемпион Европы по лонгборду, который с радостью поделится опытом как с новичками, так и
-                            более опытными серферами.
-                            Все члены преподавательского состава являются сертифицированными членами Федерации серфинга
-                            Канарских островов. Некоторые из них знают русский язык, что определенно позиционирует нас
-                            как русскую школу серфинга за границей!
-                        </div>
-                        <div class="motivation__text text">
-                            Весь тренерский состав регулярно участвует в семинарах и курсах повышения квалификации,
-                            которые проводятся по всему миру различными известными серф-клубами и федерациями. Поэтому в
-                            нашей школе серфинга вы можете быть спокойны: вас обучают лучшие тренеры!
-                        </div>
-                        <div class="motivation__text text">
-                            Методика обучения серфингу рассчитана как на новичков, на серферов среднего уровня, так и на
-                            серферов уровня ТОП. Тренеры находят подход к каждому, несмотря на то, что обучение серфингу
-                            в нашей школе производится в группах. Однако, мы предлагаем персональные уроки серфинга -
-                            только вы и тренер! П
-                        </div>
+            <div class="motivation__inner">
+                <div class="motivation__info">
+                    <div class="motivation__title title">
+                        покоряй вершины
                     </div>
-                    <div class="motivation__img">
-                        <img src="images/motivation.jpg" alt="Сноубордист на волнах">
+                    <div class="motivation__text text">
+                        Преподаватели нашей школы серфинга в числе лучших серферов на Канарских островах. Среди них
+                        - чемпион Европы по лонгборду, который с радостью поделится опытом как с новичками, так и
+                        более опытными серферами.
+                        Все члены преподавательского состава являются сертифицированными членами Федерации серфинга
+                        Канарских островов. Некоторые из них знают русский язык, что определенно позиционирует нас
+                        как русскую школу серфинга за границей!
                     </div>
+                    <div class="motivation__text text">
+                        Весь тренерский состав регулярно участвует в семинарах и курсах повышения квалификации,
+                        которые проводятся по всему миру различными известными серф-клубами и федерациями. Поэтому в
+                        нашей школе серфинга вы можете быть спокойны: вас обучают лучшие тренеры!
+                    </div>
+                    <div class="motivation__text text">
+                        Методика обучения серфингу рассчитана как на новичков, на серферов среднего уровня, так и на
+                        серферов уровня ТОП. Тренеры находят подход к каждому, несмотря на то, что обучение серфингу
+                        в нашей школе производится в группах. Однако, мы предлагаем персональные уроки серфинга -
+                        только вы и тренер!
+                    </div>
+                </div>
+                <div class="motivation__img">
+                    <img class="motivation__pict" src="images/motivation.jpg" alt="Сноубордист на волнах">
                 </div>
             </div>
         </section>
@@ -237,7 +239,7 @@
             </div>
         </section>
         <section class="video">
-            <img src="images/video.jpg" alt="Скриншот видео о серфинге">
+            <img class="video__img" src="images/video.jpg" alt="Скриншот видео о серфинге">
         </section>
         <section class="indicators">
             <div class="indicators__inner">
@@ -388,7 +390,6 @@
                         <div class="team__status">Инструктор</div>
                     </div>
                 </div>
-  
             </div>
         </section>
         <section class="packages">
@@ -453,10 +454,9 @@
             </div>
         </section>
         <section class="map">
-                <div class="map__inner">
-                    <img class="map__img" src="images/map.jpg" alt="Карта">
-                </div>
- 
+            <div class="map__inner">
+                <img class="map__img" src="images/map.jpg" alt="Карта">
+            </div>
         </section>
         <section class="request">
             <div class="container">
@@ -464,9 +464,13 @@
                 <div class="request__inner">
                     <div class="request__form">
                         <form action="">
-                            <input class="request__field request__field--input" type="text" name="name" placeholder='Имя'>
-                            <input class="request__field request__field--input" type="text" name="phone" placeholder='Телефон'>
-                            <textarea class="request__field request__field--message" type="text" placeholder="Оставьте сообщение, и мы свяжемся с Вами в ближайшее время" rows="8"></textarea>
+                            <input class="request__field request__field--input" type="text" name="name"
+                                placeholder='Имя'>
+                            <input class="request__field request__field--input" type="text" name="phone"
+                                placeholder='Телефон'>
+                            <textarea class="request__field request__field--message" type="text"
+                                placeholder="Оставьте сообщение, и мы свяжемся с Вами в ближайшее время"
+                                rows="8"></textarea>
                             <button type="submit" class="request__btn">Отправить</button>
                         </form>
                     </div>
@@ -477,11 +481,11 @@
                         <div class="request__text">
                             WhatsApp, Viber, Telegram
                             <a href="phone:+34674863788" class="request__phone">+3 467 486-37-88</a>
-                            
+
                         </div>
                         <div class="request__text">
-                            Avenida grandes playas 79, 
-                            Corralejo la Oliva Fuerteventura, 
+                            Avenida grandes playas 79,
+                            Corralejo la Oliva Fuerteventura,
                             Spain. 35660
                         </div>
                     </div>
@@ -497,7 +501,6 @@
     <footer class="footer">
         <a class="logo footer__logo" href="#" style="background-image: url(images/logo.png);"></a>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>

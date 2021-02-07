@@ -2,7 +2,7 @@
 @import "vars";
 @import "global";
 @import "media";
-//-----------------------------------------
+
 .header {
     &__inner {
         display: flex;
@@ -13,6 +13,7 @@
         margin: 0 auto;
     }
 }
+
 .intro {
     background-position: center center;
     background-size: cover;
@@ -32,7 +33,6 @@
     }
     &__inner {
         text-align: center;
-        // border: 1px solid green;
     }
     &__title {
         color: #0D302C;
@@ -55,9 +55,13 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 25%;
-
+        position: absolute;
+        bottom: 92px;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }
+
 .about {
     &__inner {
         padding: 190px 0;
@@ -81,6 +85,7 @@
         }
     }
 }
+
 .get {
     background-color: #F8F8F8;
     &__inner {
@@ -106,27 +111,72 @@
         }
     }
 }
+
+.attainment {
+    display: flex;
+    justify-content: space-around;
+    &__item + .attainment__item {
+        margin-left: 75px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 30px;
+        max-width: 220px;
+        height: 55px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        &:before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        &--1:before {
+            background-image: url(../images/get1.png);
+        }
+        &--2:before {
+            background-image: url(../images/get2.png);
+        }
+        &--3:before {
+            background-image: url(../images/get3.png);
+        }
+    }
+    &__item {
+        width: 33.3%;
+    }
+}
+
 .motivation {
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: top;
+        width: 100%;
     }
     &__info {
         width: 50%;
         padding-top: 200px;
-
+        margin-left: calc((100% - 1200px)/2);
     }
     &__img {
         width: 50%;
         height: 850px;
         position: relative;
         margin-bottom: 200px;
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+    }
+    &__pict {
+        position: absolute;
+        max-width: 960px;
+        // top: 0;
+        // left: 0;
+        width: 100%;
     }
     &__title {
         text-align: left;
@@ -137,6 +187,7 @@
         margin-bottom: 30px;
     }
 }
+
 .gallery {
     &__title {
         margin-bottom: 200px;
@@ -190,6 +241,7 @@
         }
     }
 }
+
 .cite {
     text-align: center;
     font-style: italic;
@@ -208,10 +260,12 @@
         margin-right: 180px;
     }
 }
+
 .video {
     text-align: center;
     padding: 200px 0;
 }
+
 .indicators {
     &__inner {
         display: flex;
@@ -232,11 +286,13 @@
         margin-bottom: 5px;
     }
 }
+
 .blog {
     &__title {
         margin-bottom: 230px;
     }
 }
+
 .article {
     width: 100%;
     height: 800px;
@@ -274,6 +330,7 @@
         transform: translate(50%, 0);
     }
 }
+
 .slick-dots {
     position: absolute;
     bottom: 30%;
@@ -303,6 +360,49 @@
         }
     }
 }
+
+.progress {
+    &__img {
+        height: 15px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+        &:after {
+            font-size: 24px;
+            line-height: 30px;
+            margin-left: auto;
+            margin-right: -50px;
+        }
+        &--short {
+            width: 200px;
+            background-image: url(../images/wawe1.png);
+            &:after {
+                content: '85%';
+            }
+        }
+        &--medium {
+            width: 250px;
+            background-image: url(../images/wawe2.png);
+            &:after {
+                content: '95%';
+            }
+        }
+        &--long {
+            width: 300px;
+            background-image: url(../images/wawe3.png);
+            &:after {
+                content: '99%';
+            }
+        }
+    }
+    &__text {
+        margin-bottom: 30px;
+    }
+}
+
 .team {
     &__title {
         margin-bottom: 212px;
@@ -314,7 +414,6 @@
     }
     &__item {
         text-align: center;
-        color: $dark;
         line-height: 18px;
     }
     &__img {
@@ -329,6 +428,7 @@
         font-size: 14px;
     }
 }
+
 .packages {
     background-color: #F8F8F8;
     padding-top: 200px;
@@ -341,6 +441,51 @@
         padding-bottom: 192px;
     }
 }
+
+.package {
+    background-color: #fff;
+    padding: 45px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid transparent;
+    transition: .3s;
+    &:hover {
+        border: 1px solid $main;
+    }
+    &__title {
+        text-align: center;
+        font-size: 36px;
+        line-height: 40px;
+        color: #01353E;
+        margin-bottom: 58px;
+    }
+    &__list {
+        margin-bottom: 60px;
+    }
+    &__item {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+    &__price {
+        margin-top: auto;
+        font-size: 36px;
+        line-height: 40px;
+        color: #01353E;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:after {
+            content: '$';
+            font-size: 18px;
+            line-height: 22px;
+            color: #01353E;
+            margin-left: 5px;
+        }
+    }
+}
+
 .map {
     &__inner {
         padding: 200px 0;
@@ -348,9 +493,10 @@
     &__img {
         margin: 0 auto;
         display: block;
+        width: 100%;
     }
-
 }
+
 .request {
     &__title {
         margin-bottom: 243px;
@@ -395,7 +541,6 @@
         background-color: transparent;
         padding: 24px 110px;
         border: 1px solid #C4C4C4;
-        color: $dark;
         &:hover {
             border: 1px solid $main;
         }
@@ -405,7 +550,6 @@
         padding: 50px 220px 70px 50px;
         font-size: 24px;
         line-height: 30px;
-        color: $dark;
         margin-bottom: 200px;
     }
     &__text {
@@ -417,7 +561,6 @@
     }
     &__phone {
         display: block;
-        color: $dark;
         transition: .3s;
         &:hover {
             color: $main;
@@ -427,6 +570,7 @@
         margin-bottom: 180px;
     }
 }
+
 .footer {
     background-color: $main;
     &__logo {
