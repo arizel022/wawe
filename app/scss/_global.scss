@@ -14,9 +14,19 @@ html {
 }
 
 body {
-    font-family: 'RobotoCondensed-Regular';
-    color: $dark;
     height: 100%;
+    font-family: 'RobotoCondensed', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.3;
+    color: $dark;
+    background-color: #fff;
+    letter-spacing: 0.6px; // herotitle/h2/
+
+    @media (max-width: 750px) {
+        line-height: 1.5;
+        font-size: 16px;
+    }
 }
 
 a {
@@ -30,85 +40,249 @@ ul, li {
     list-style: none;
 }
 
+h1, h2, h3, p, blockquote, figure {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.2;
+    color: $main-2;
+    position: relative;
+
+    &::after {
+        content: '/';
+        position: absolute;
+        color: $main;
+        bottom: -32px;
+        font-size: 72px;
+    }
+
+    @media (max-width: 1250px) {
+        font-size: 38px;
+        &:after {
+            content: '';
+        }
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 28px;
+    }
+
+    @media (max-width: 550px) {
+        line-height: 1.5;
+    }
+}
+
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     height: 100%;
     padding: 0;
+    @media (max-width: 1250px) {
+        width: 100%;
+        padding: 0 45px;
+    }
 }
 
 .logo {
     width: 60px;
     height: 63px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    display: block;
 }
 
 .menu {
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+
     &__list {
         display: flex;
         justify-content: space-between;
+        margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            display: none;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 130px;
+            background-color: #fff;
+            flex-direction: column;
+        }
     }
+
     &__item {
         padding-bottom: 4px;
         border-bottom: 2px solid transparent;
-        transition: .5s;
+        transition: border-bottom-color 0.5s;
+
         &:hover {
-            border-bottom: 2px solid $main; 
+            border-bottom-color: $main; 
+        }
+
+        &:not(:last-child) {
+            margin-right: 45px;
+        }
+
+        @media (max-width: 1024px) {
+            margin-left: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 2px solid $main;
+            padding: 0;
         }
     }
-    &__item+.menu__item {
-        margin-left: 45px;
-    }
+
     &__link {
         display: block;
         color: #fff;
         font-size: 24px;
+
+        @media (max-width: 1024px) {
+            color: $dark;
+            text-align: center;
+            padding: 15px 0;
+
+            &:active {
+                color: $main;
+                background-color: $dark;
+            }
+        }
     }
+
+    &__line {
+        @media (max-width: 1024px) {
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            border-radius: 8px;
+            transition: all .5s;
+            &:nth-of-type(1) {
+                top: 0;
+            }
+
+            &:nth-of-type(2) {
+                top: 20px;
+            }
+
+            &:nth-of-type(3) {
+                bottom: 0;
+            }
+
+        }
+
+        @media (max-width: 750px) {
+            height: 3px;
+
+            &:nth-of-type(2) {
+                top: 15px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            height: 2px;
+
+            &:nth-of-type(2) {
+                top: 12px;
+            }
+        }
+    }
+
     &__burger {
         display: none;
-    }
-}
 
-.title {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Raleway-SemiBold';
-    font-size: 48px;
-    line-height: 56px;
-    color: #01353E;
-    position: relative;
-    &:after {
-        content: '/';
-        position: absolute;
-        color: $main;
-        bottom: -15px;
-        font-size: 72px;
-    }
-}
+        @media (max-width: 1024px) {
+            display: block;
+            width: 70px;
+            height: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 25px 0 auto;
+            position: relative;
+            background-color: transparent;
+            border: none;
 
-.text {
-    font-family: 'RobotoCondensed-Light';
-    font-size: 14px;
-    line-height: 18px;
-    color: $dark;
+            &:focus {
+                outline: none;
+            }
+
+            //---------------------------------анимация кнопки бургера
+            &.active .menu__line:nth-of-type(1) {
+                transform: translateY(20px) rotate(-135deg);
+            }
+
+            &.active .menu__line:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            &.active .menu__line:nth-of-type(3) {
+                transform: translateY(-20px) rotate(135deg);
+            }
+        }
+
+        @media (max-width: 750px) {
+            width: 60px;
+            height: 35px;
+            margin: 0 25px 0 auto;
+
+            &.active .menu__line:nth-of-type(1) {
+                transform: translateY(15px) rotate(-135deg);
+            }
+
+            &.active .menu__line:nth-of-type(3) {
+                transform: translateY(-18px) rotate(135deg);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+            width: 40px;
+            height: 25px;
+            margin: 0 0 0 auto;
+
+            &.active .menu__line:nth-of-type(1) {
+                transform: translateY(10px) rotate(-135deg);
+            }
+
+            &.active .menu__line:nth-of-type(3) {
+                transform: translateY(-14px) rotate(135deg);
+            }
+        }
+    }
 }
 
 .social {
     display: flex;
     justify-content: center;
-    &__item {
+
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__link {
         text-transform: uppercase;
         font-size: 24px;
-        line-height: 24px;
-        color: #242121;
-        transition: .2s;
+        line-height: 1;
+        color: $dark;
+        transition: color 0.2s;
+
         &:hover {
             color: $main;
         }
-    }
-    &__item+.social__item {
-        margin-left: 10px;
+
+        @media (max-width: 550px) {
+            font-size: 18px;
+        }
     }
 }
